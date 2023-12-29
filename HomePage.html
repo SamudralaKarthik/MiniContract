@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<style>
+    .header {
+        color: black;
+    }
+    
+    .wrapper1 {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 80rem;
+        margin-top: 84px;
+    }
+    
+    .cols {
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+    
+    .col {
+        width: calc(25% - 2rem);
+        margin: 1rem;
+        cursor: pointer;
+        margin-left: -5px;
+        margin-bottom: -5px;
+    }
+    
+    .col-md-6 {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+    
+    .col-md-6 {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+    
+    ul {
+        list-style-type: none;
+    }
+    
+    .front,
+    .back {
+        background-size: cover;
+        background-position: center;
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        backface-visibility: hidden;
+        text-align: center;
+        min-height: 280px;
+        height: auto;
+        color: #fff;
+        font-size: 1rem;
+    }
+    
+    .front {
+        color: red;
+    }
+    
+    .back {
+        background: #fff;
+        /* background: linear-gradient(45deg, #fd0d44 0%, #1463e2 100%); */
+        background: linear-gradient(45deg, #ff8a00 0%, #e52e71 100%);
+    }
+    
+    .front:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        backface-visibility: hidden;
+    }
+    
+    .col-md-6:hover .front,
+    .col-md-6:hover .back {
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    
+    .col-md-6:hover .front,
+    .col-md-6:hover .back {
+        transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    
+    .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    
+    .inner {
+        transform: translateY(-50%) translateZ(60px) scale(0.94);
+        top: 50%;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        box-sizing: border-box;
+        outline: 1px solid transparent;
+        perspective: inherit;
+        z-index: 2;
+    }
+    
+    .col-md-6 .back {
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;
+    }
+    
+    .col-md-6 .back {
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;
+    }
+    
+    .col-md-6 .front {
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+    }
+    
+    .col-md-6 .front {
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+    }
+    /* .container:hover .back {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+} */
+    
+    .col-md-6:hover .back {
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+    }
+    
+    .col-md-6:hover .back {
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+    }
+    
+    .bg-1 {
+        background-image: url(images/wireless.png);
+    }
+    
+    .bg-2 {
+        background-image: url(images/civil.png);
+    }
+    
+    .bg-3 {
+        background-image: url(images/solar.png);
+    }
+    
+    .bg-4 {
+        background-image: url(images/fiber.png);
+    }
+    /* .container:hover .front {
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+} */
+    
+    .col-md-6:hover .front {
+        transform: rotateY(-180deg);
+        transform-style: preserve-3d;
+    }
+    
+    .col-md-6:hover .front {
+        transform: rotateY(-180deg);
+        transform-style: preserve-3d;
+    }
+    
+    .front .inner p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+    
+    .front .inner p:after {
+        content: '';
+        width: 4rem;
+        height: 2px;
+        position: absolute;
+        background: #fff;
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: -.75rem;
+    }
+    
+    .front .inner span {
+        color: fff;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 300;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="text-right banner">
+                <h1 class="display-4 text-center font-weight-bold heading">
+                    Link Wireless Communications, Inc.
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="front bg-1 m-2">
+                            <div class="inner">
+                                <h2>
+                                    <b>
+                                        <ul class="eff">
+                                            <li>
+                                                Wireless
+                                            </li>
+                                            <!-- <li>
+                                                <hr class="hr" style=" height: 4px; background-color: black;" />
+                                            </li> -->
+                                        </ul>
+                                    </b>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="back ">
+                            <div class="inner">
+                                <p>
+                                    Link Wireless is a top-tier telecom construction contractor, specializing in wireless infrastructure solutions. With a focus on quality, safety, and national coverage, they deliver tailored services for diverse projects in the wireless industry
+                                </p>
+                                <a href="https://www.eplinkwireless.com/index.html" style="color:#fff">
+                                    <br>
+                                    <p>know more <i class="fa fa-hand-o-right" aria-hidden="true"></i></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="front bg-2 m-2">
+                            <div class="inner">
+                                <h2>
+                                    <b>
+                                        <ul class="eff1">
+                                            <li >
+                                                Civil
+                                            </li>
+                                            <!-- <li>
+                                                <hr class="hr" style=" width: 80px; margin-left: 115px; height: 4px; background-color: black;" />
+                                            </li> -->
+                                        </ul>
+                                    </b>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <p>
+                                    Link Wireless excels in civil infrastructure services, offering expertise in the construction of diverse structures, from raw land to rooftops. Their skilled team ensures quality and safety in every project.
+                                </p>
+                                <a href="https://www.eplinkwireless.com/index.html" style="color:#fff">
+                                    <br>
+                                    <p>know more <i class="fa fa-hand-o-right" aria-hidden="true"></i></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="front bg-3 m-2">
+                            <div class="inner">
+                                <h2>
+                                    <b>
+                                        <ul class="eff2">
+                                            <li >
+                                                EV/ Solar/ Generators
+                                            </li>
+                                            <!-- <li>
+                                                <hr class="hr" style=" width: 100px; margin-left: 105px; height: 4px; background-color: black;" />
+                                            </li> -->
+                                        </ul>
+                                    </b>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="back ">
+                            <div class="inner">
+                                <p>
+                                    Link Wireless is a versatile provider, extending its expertise beyond telecom to EV charging, solar installations, and generator solutions. Their commitment to sustainable energy aligns with diverse project needs, ensuring excellence.
+                                </p>
+                                <a href="https://www.eplinkwireless.com/index.html" style="color:#fff">
+                                    <br>
+                                    <p>know more <i class="fa fa-hand-o-right" aria-hidden="true"></i></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="front bg-4 ">
+                            <div class="inner">
+                                <h2>
+                                    <b>
+                                        <ul class="eff3">
+                                            <li >
+                                                Fiber/Underground
+                                            </li>
+                                            <!-- <li>
+                                                <hr class="hr" style=" width: 150px; margin-left: 280px; height: 4px; background-color: black;" />
+                                            </li> -->
+                                        </ul>
+                                    </b>
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="back ">
+                            <div class="inner">
+                                <p>
+                                    Expertise in Fiber to the Cell, Fiber to the Prem, and Fiber to the Home projects. Their proficiency spans construction, splicing, and utility pole replacement
+                                </p>
+                                <a href="https://www.eplinkwireless.com/index.html" style="color:#fff">
+                                    <br>
+                                    <p>know more <i class="fa fa-hand-o-right" aria-hidden="true"></i></p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+
+</html>
