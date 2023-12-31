@@ -5,12 +5,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bootstrap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
 
 <style>
+    .container,
+    .container-fluid {
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
     .header {
         color: black;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #666;
+        background: ghostwhite;
     }
     
     .wrapper1 {
@@ -203,19 +221,233 @@
         font-family: 'Roboto Condensed', sans-serif;
         font-weight: 300;
     }
+    /* .hidden {
+        display: none;
+    }
+    
+    .loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: white;
+        width: 100%;
+        height: 100vh;
+        animation: backgroundChange .5s linear 3s forwards;
+    }
+    
+    .load-text {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        font-size: 7vmax;
+        width: fit-content;
+        display: flex;
+        animation: colorChange .5s linear 3s forwards;
+    }
+    
+    .loaded-text {
+        transform: scale(1.5);
+        animation: scaleText .5s linear .5s forwards;
+    }
+    
+    .loading-text {
+        width: 0;
+        overflow: hidden;
+        animation: expand 1s linear 2s forwards;
+        /* Adjusted delay to 2s 
+        white-space: nowrap;
+    }
+    
+    @keyframes scaleText {
+        from {
+            transform: scale(1.5)
+        }
+        to {
+            transform: scale(1)
+        }
+    }
+    
+    @keyframes expand {
+        from {
+            width: 0;
+        }
+        to {
+            width: 50vmax;
+        }
+    }
+    
+    @keyframes backgroundChange {
+        from {
+            background-color: white
+        }
+        to {
+            background-color: black
+        }
+    }
+    
+    @keyframes colorChange {
+        from {
+            color: black
+        }
+        to {
+            color: white
+        }
+    }
+    
+    @keyframes fadeOut {
+        from {
+            opacity: 1
+        }
+        to {
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0
+        }
+        to {
+            opacity: 1
+        }
+    }
+    /* Media Queries for Tablets and Mobiles 
+    
+    @media only screen and (max-width: 768px) {
+        .load-text {
+            font-size: 5vmax;
+            left: 60%;
+            /* Center horizontally
+            top: 48%;
+            /* Adjust the vertical position as needed
+        }
+    }
+    
+    @media only screen and (max-width: 480px) {
+        .load-text {
+            font-size: 3vmax;
+            left: 85%;
+            /* Center horizontally
+            top: 45%;
+            /* Adjust the vertical position as needed
+        }
+    } */
+    
+    .loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        align-items: stretch;
+        overflow: hidden;
+        .stripe {
+            flex: 1;
+            background: #000;
+            transition: transform .8s ease;
+            transition-delay: 1.3s;
+            &:nth-child(2) {
+                transition-delay: 1.35s;
+            }
+            &:nth-child(3) {
+                transition-delay: 1.475s;
+            }
+            &:nth-child(4) {
+                transition-delay: 1.525s;
+            }
+        }
+        .claim {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            font-size: 5.5em;
+            color: #fff;
+            span {
+                display: inline-block;
+                transform: translate3d(0, 150%, 0);
+                opacity: 0;
+                transition: transform .4s ease, opacity .4s ease;
+                &:nth-child(2) {
+                    transition-delay: .4s;
+                }
+                &:nth-child(3) {
+                    transition-delay: .8s;
+                }
+            }
+        }
+        &.loaded {
+            .stripe {
+                transform: translate3d(0, 100%, 0);
+            }
+            .claim {
+                span {
+                    transform: translate3d(0, 0%, 0);
+                    opacity: 1;
+                    animation: disappear .55s ease 1.2s forwards;
+                    &:nth-child(2) {
+                        animation-delay: 1.28s;
+                    }
+                    &:nth-child(3) {
+                        animation-delay: 1.34s;
+                    }
+                }
+            }
+        }
+        &.hidden {
+            display: none;
+        }
+    }
+    
+    @keyframes disappear {
+        to {
+            transform: translate3d(0, 150%, 0);
+            opacity: 0;
+        }
+    }
+    
+    .hiddens {
+        display: none;
+    }
 </style>
 
 <body>
-    <div class="container">
+
+    <!-- <div class="loader">
+        <div class="load-text">
+            <div class="loaded-text">W</div>
+            <div class="loading-text">elcome to LMC</div>
+        </div>
+    </div> -->
+
+    <div class="loader">
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+
+        <div class="claim">
+            <span>Welcome</span>
+            <span>To</span>
+            <span>LWC</span>
+        </div>
+    </div>
+
+
+    <div class="container hiddens content">
         <div class="row">
             <div class="text-right banner">
                 <h1 class="display-4 text-center font-weight-bold heading">
-                    Link Wireless Communications, Inc.
+                    LWC
                 </h1>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container hiddens content">
         <div class="row">
             <div class="container">
                 <div class="row">
@@ -243,7 +475,7 @@
                                 </p>
                                 <a href="https://www.eplinkwireless.com/index.html" style="color:#fff">
                                     <br>
-                                    <p>know more <i class="fa fa-hand-o-right" aria-hidden="true"></i></p>
+                                    <p>Wireless Link <i class="fa-solid fa-link"></i></p>
                                 </a>
                             </div>
                         </div>
@@ -272,7 +504,7 @@
                                 </p>
                                 <a href="https://www.eplinkwireless.com/index.html" style="color:#fff">
                                     <br>
-                                    <p>know more <i class="fa fa-hand-o-right" aria-hidden="true"></i></p>
+                                    <p>Civil Link <i class="fa-solid fa-link"></i></p>
                                 </a>
                             </div>
                         </div>
@@ -305,13 +537,13 @@
                                 </p>
                                 <a href="https://www.eplinkwireless.com/index.html" style="color:#fff">
                                     <br>
-                                    <p>know more <i class="fa fa-hand-o-right" aria-hidden="true"></i></p>
+                                    <p>EV/ Solar/ Generators Link <i class="fa-solid fa-link"></i></p>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="front bg-4 m-2">
+                        <div class="front bg-4 ">
                             <div class="inner">
                                 <h2>
                                     <b>
@@ -334,13 +566,14 @@
                                 </p>
                                 <a href="https://www.eplinkwireless.com/index.html" style="color:#fff">
                                     <br>
-                                    <p>know more <i class="fa fa-hand-o-right" aria-hidden="true"></i></p>
+                                    <p>Fiber Link <i class="fa-solid fa-link"></i></p>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br>
             <div class="container">
                 <div class="row">
                     <br>
@@ -352,6 +585,49 @@
 
     </div>
     </div>
+    <script>
+        // document.addEventListener("DOMContentLoaded", function() {
+        //     // Simulate the loading animation
+        //     const contentSections = document.querySelectorAll('.content');
+        //     setTimeout(function() {
+        //         document.querySelector('.loader').style.display = 'none';
+        //         contentSections.forEach((section, index) => {
+        //             setTimeout(function() {
+        //                 section.classList.remove('hidden');
+        //             }, index * 200); // Adjusted to reveal each section after 1 second
+        //         });
+        //     }, 5000); // Adjusted to 7 seconds to match the CSS animation timings
+        // });
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.querySelector('.loader');
+                loader.classList += ' loaded';
+
+                const contentSections = document.querySelectorAll('.content');
+                setTimeout(function() {
+                    contentSections.forEach((section, index) => {
+                        setTimeout(function() {
+                            section.classList.remove('hiddens');
+                        }, index * 200); // Adjusted to reveal each section after 1 second
+                    });
+                }, 1000);
+
+                setTimeout(() => {
+                    loader.classList += ' hidden';
+                    // Rotate bg-1 after loader is hidden
+                    const bg1 = document.querySelectorAll('.col-md-6');
+                    bg1[0].style.transition = 'transform 1s ease';
+                    bg1[0].style.transform = 'rotateY(180deg)';
+
+                    setTimeout(() => {
+                        // Reset the rotation after 1 second
+                        bg1[0].style.transition = 'none';
+                        bg1[0].style.transform = 'rotateY(0deg)';
+                    }, 1000);
+                }, 2325);
+            }, 1000);
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
