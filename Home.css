@@ -521,11 +521,13 @@
   }
 
   .u-section-3 .u-text-2 {
-    margin-right: auto;
+    width: auto;
+    margin-top: 20px;
     margin-left: 0;
   }
 
   .u-section-3 .u-text-3 {
+    margin-top: 30px;
     margin-right: auto;
     margin-left: 0;
   }
@@ -565,12 +567,12 @@
   }
 
   .u-section-3 .u-tab-link-1 {
-    font-size: 0.9375rem;
+    font-size: 1rem;
     border-style: solid;
   }
 
   .u-section-3 .u-tab-link-2 {
-    font-size: 0.9375rem;
+    font-size: 1rem;
     border-style: solid;
   }
 
@@ -581,11 +583,6 @@
   .u-section-3 .u-image-1 {
     height: 446px;
     width: 320px;
-  }
-
-  .u-section-3 .u-text-2 {
-    width: auto;
-    margin-right: 0;
   }
 
   .u-section-3 .u-container-layout-2 {
